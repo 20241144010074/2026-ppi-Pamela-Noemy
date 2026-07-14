@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS filmes;
+
+CREATE TABLE filmes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  titulo TEXT NOT NULL,
+  descricao TEXT,
+  ano INTEGER
+);

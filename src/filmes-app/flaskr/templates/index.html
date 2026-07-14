@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmes</title>
+</head>
+
+<body>
+
+<h1>Lista de Filmes</h1>
+
+<a href="{{ url_for('filmes.create') }}">Adicionar filme</a>
+
+<hr>
+
+{% for filme in filmes %}
+    <h2>{{ filme['titulo'] }}</h2>
+
+    <p>{{ filme['descricao'] }}</p>
+
+    <p>Ano: {{ filme['ano'] }}</p>
+
+    <a href="{{ url_for('filmes.update', id=filme['id']) }}">
+        Editar
+    </a>
+
+    <form action="{{ url_for('filmes.delete', id=filme['id']) }}" method="post" style="display:inline;">
+        <button type="submit">Excluir</button>
+    </form>
+
+    <hr>
+
+{% else %}
+
+    <p>Nenhum filme cadastrado ainda.</p>
+
+{% endfor %}
+
+</body>
+</html>

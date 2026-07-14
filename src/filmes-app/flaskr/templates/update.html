@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Filme</title>
+</head>
+
+<body>
+
+<h1>Adicionar Filme</h1>
+
+<form method="post">
+
+    <label>Título:</label>
+    <input name="titulo" required>
+
+    <br><br>
+
+    <label>Descrição:</label>
+    <input name="descricao">
+
+    <br><br>
+
+    <label>Ano:</label>
+    <input name="ano" type="number">
+
+    <br><br>
+
+    <button type="submit">Salvar</button>
+
+</form>
+
+<br>
+
+<a href="{{ url_for('filmes.index') }}">Voltar</a>
+
+</body>
+</html>
